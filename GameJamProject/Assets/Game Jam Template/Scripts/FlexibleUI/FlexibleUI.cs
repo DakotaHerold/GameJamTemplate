@@ -1,14 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Jam; 
 
 [ExecuteInEditMode()]
-
 public class FlexibleUI : MonoBehaviour {
 
     public FlexibleUIData flexibleUIData;
 
-    protected virtual void OnSkinUI(){}
+    protected virtual void OnSkinUI() { }
 
     public void Initialize()
     {
@@ -23,3 +23,4 @@ public class FlexibleUI : MonoBehaviour {
         }
     }
 }
+
