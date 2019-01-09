@@ -1,2 +1,2 @@
 # GameJamTemplate
-A template Unity 2018.1.2f1 project for Game Jams. 
+A template Unity 2018.30f2 project for use in Game Jams. 
