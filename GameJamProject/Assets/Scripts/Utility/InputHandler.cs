@@ -16,6 +16,8 @@ namespace Jam
         private float mouseScrollWheel;
         private bool submitPressed;
         private bool cancelPressed;
+        private bool mouseLeftPressed;
+        private bool mouseRightPressed; 
 
         private bool fire1Released;
         private bool fire2Released;
@@ -23,6 +25,8 @@ namespace Jam
         private bool jumpReleased;
         private bool submitReleased;
         private bool cancelReleased;
+        private bool mouseLeftReleased;
+        private bool mouseRightReleased; 
 
         private bool fire1Held;
         private bool fire2Held;
@@ -30,6 +34,8 @@ namespace Jam
         private bool jumpHeld;
         private bool submitHeld;
         private bool cancelHeld;
+        private bool mouseLeftHeld;
+        private bool mouseRightHeld; 
 
         public float HorizontalAxis
         {
@@ -119,6 +125,22 @@ namespace Jam
             }
         }
 
+        public bool MouseLeftPressed
+        {
+            get
+            {
+                return mouseLeftPressed;
+            }
+        }
+
+        public bool MouseRightPressed
+        {
+            get
+            {
+                return mouseRightPressed;
+            }
+        }
+
         public bool Fire1Released
         {
             get
@@ -164,6 +186,22 @@ namespace Jam
             get
             {
                 return cancelReleased;
+            }
+        }
+
+        public bool MouseLeftReleased
+        {
+            get
+            {
+                return mouseLeftReleased;
+            }
+        }
+
+        public bool MouseRightReleased
+        {
+            get
+            {
+                return mouseRightReleased;
             }
         }
 
@@ -215,6 +253,22 @@ namespace Jam
             }
         }
 
+        public bool MouseLeftHeld
+        {
+            get
+            {
+                return mouseLeftHeld;
+            }
+        }
+
+        public bool MouseRightHeld
+        {
+            get
+            {
+                return mouseRightHeld;
+            }
+        }
+
         // Update is called once per frame
         void Update()
         {
@@ -232,6 +286,8 @@ namespace Jam
             jumpPressed = Input.GetButtonDown("Jump");
             submitPressed = Input.GetButtonDown("Submit");
             cancelPressed = Input.GetButtonDown("Cancel");
+            mouseLeftPressed = Input.GetMouseButtonDown(0); // 0 is left click
+            mouseRightPressed = Input.GetMouseButtonDown(1);
 
             // Button Holds
             fire1Held = Input.GetButton("Fire1");
@@ -240,6 +296,8 @@ namespace Jam
             jumpHeld = Input.GetButton("Jump");
             submitHeld = Input.GetButton("Submit");
             cancelHeld = Input.GetButton("Cancel");
+            mouseLeftHeld = Input.GetMouseButton(0);
+            mouseRightHeld = Input.GetMouseButton(1);
 
             // Button Releases
             fire1Released = Input.GetButtonUp("Fire1");
@@ -248,14 +306,10 @@ namespace Jam
             jumpReleased = Input.GetButtonUp("Jump");
             submitReleased = Input.GetButtonUp("Submit");
             cancelReleased = Input.GetButtonUp("Cancel");
+            mouseLeftReleased = Input.GetMouseButtonUp(0);
+            mouseRightReleased = Input.GetMouseButtonUp(1);
 
-            // Testing
-            if (JumpPressed)
-                Debug.Log("Jump Pressed");
-            if (JumpHeld)
-                Debug.Log("Jump Held");
-            if (jumpReleased)
-                Debug.Log("Jump Released"); 
+
         }
     }
 }
